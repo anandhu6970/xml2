@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/bikeSchema" xmlns:tns="http://www.example.org/bikeSchema" elementFormDefault="qualified">
+<complexType name="biketype">
+<sequence>
+<element name="bike" type="tns:biketype">
+</element>
+</sequence>
+</complexType>
+<complexType name="bikestype">
+<sequence>
+<element name="bikename" type="string">
+</element>
+<element name="pickoff" type="tns:mypick">
+</element>
+<element name="drop" type="tns:mydrop">
+</element>
+<element name="price" type="tns:myPrice">
+</element>
+<element name="available" type="integer">
+</element>
+</sequence>
+<attribute name="mid" type="ID" use="required">
+</attribute>
+</complexType>
+<simpleType name="mypick">
+<restriction base="string">
+<pattern value="[a-zA-Z][a-zA-Z][a-zA-Z]"/>
+</restriction>
+</simpleType>
+<simpleType name="mydrop">
+<restriction base="integer">
+<minInclusive value="3"></minInclusive>
+<maxInclusive value="10"></maxInclusive>
+</restriction>
+</simpleType>
+<simpleType name="myPrice">
+<restriction base="integer">
+<minInclusive value="50"></minInclusive>
+<maxInclusive value="500"></maxInclusive>
+</restriction>
+</simpleType>
+
+</schema>
